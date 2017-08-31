@@ -1,0 +1,296 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CBE663B51F40CDBA00FBC31B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBE663B41F40CDBA00FBC31B /* main.cpp */; };
+		CBE663C11F40CDD300FBC31B /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBE663BE1F40CDD300FBC31B /* Renderer.cpp */; };
+		CBE663C21F40CDD300FBC31B /* VectorUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBE663BF1F40CDD300FBC31B /* VectorUtils.cpp */; };
+		CBE663C61F40CDF500FBC31B /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE663C41F40CDF500FBC31B /* SDL2_ttf.framework */; };
+		CBE663C71F40CDF500FBC31B /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE663C51F40CDF500FBC31B /* SDL2.framework */; };
+		CBE663CA1F40CE4B00FBC31B /* Wireframe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBE663C91F40CE4B00FBC31B /* Wireframe.cpp */; };
+		CBE663CD1F40CEAB00FBC31B /* CApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBE663CB1F40CEAB00FBC31B /* CApp.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CBE663AF1F40CDB900FBC31B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CBE663B11F40CDB900FBC31B /* codex-fractals-cpp */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "codex-fractals-cpp"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CBE663B41F40CDBA00FBC31B /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		CBE663BB1F40CDD300FBC31B /* Renderer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Renderer.hpp; path = "../codex-4d/codex-4d/Renderer.hpp"; sourceTree = "<group>"; };
+		CBE663BC1F40CDD300FBC31B /* VectorUtils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VectorUtils.hpp; path = "../codex-4d/codex-4d/VectorUtils.hpp"; sourceTree = "<group>"; };
+		CBE663BE1F40CDD300FBC31B /* Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Renderer.cpp; path = "../codex-4d/codex-4d/Renderer.cpp"; sourceTree = "<group>"; };
+		CBE663BF1F40CDD300FBC31B /* VectorUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VectorUtils.cpp; path = "../codex-4d/codex-4d/VectorUtils.cpp"; sourceTree = "<group>"; };
+		CBE663C41F40CDF500FBC31B /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
+		CBE663C51F40CDF500FBC31B /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		CBE663C81F40CE4B00FBC31B /* Wireframe.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Wireframe.hpp; path = "../codex-4d/codex-4d/Wireframe.hpp"; sourceTree = "<group>"; };
+		CBE663C91F40CE4B00FBC31B /* Wireframe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Wireframe.cpp; path = "../codex-4d/codex-4d/Wireframe.cpp"; sourceTree = "<group>"; };
+		CBE663CB1F40CEAB00FBC31B /* CApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CApp.cpp; sourceTree = "<group>"; };
+		CBE663CC1F40CEAB00FBC31B /* CApp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CApp.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CBE663AE1F40CDB900FBC31B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBE663C61F40CDF500FBC31B /* SDL2_ttf.framework in Frameworks */,
+				CBE663C71F40CDF500FBC31B /* SDL2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CBE663A81F40CDB900FBC31B = {
+			isa = PBXGroup;
+			children = (
+				CBE663BE1F40CDD300FBC31B /* Renderer.cpp */,
+				CBE663BF1F40CDD300FBC31B /* VectorUtils.cpp */,
+				CBE663C91F40CE4B00FBC31B /* Wireframe.cpp */,
+				CBE663C41F40CDF500FBC31B /* SDL2_ttf.framework */,
+				CBE663C51F40CDF500FBC31B /* SDL2.framework */,
+				CBE663BB1F40CDD300FBC31B /* Renderer.hpp */,
+				CBE663BC1F40CDD300FBC31B /* VectorUtils.hpp */,
+				CBE663C81F40CE4B00FBC31B /* Wireframe.hpp */,
+				CBE663B31F40CDB900FBC31B /* codex-fractals-cpp */,
+				CBE663B21F40CDB900FBC31B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CBE663B21F40CDB900FBC31B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CBE663B11F40CDB900FBC31B /* codex-fractals-cpp */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CBE663B31F40CDB900FBC31B /* codex-fractals-cpp */ = {
+			isa = PBXGroup;
+			children = (
+				CBE663B41F40CDBA00FBC31B /* main.cpp */,
+				CBE663CB1F40CEAB00FBC31B /* CApp.cpp */,
+				CBE663CC1F40CEAB00FBC31B /* CApp.hpp */,
+			);
+			path = "codex-fractals-cpp";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CBE663B01F40CDB900FBC31B /* codex-fractals-cpp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CBE663B81F40CDBA00FBC31B /* Build configuration list for PBXNativeTarget "codex-fractals-cpp" */;
+			buildPhases = (
+				CBE663AD1F40CDB900FBC31B /* Sources */,
+				CBE663AE1F40CDB900FBC31B /* Frameworks */,
+				CBE663AF1F40CDB900FBC31B /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "codex-fractals-cpp";
+			productName = "codex-fractals-cpp";
+			productReference = CBE663B11F40CDB900FBC31B /* codex-fractals-cpp */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CBE663A91F40CDB900FBC31B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Charlie McVicker";
+				TargetAttributes = {
+					CBE663B01F40CDB900FBC31B = {
+						CreatedOnToolsVersion = 7.3;
+					};
+				};
+			};
+			buildConfigurationList = CBE663AC1F40CDB900FBC31B /* Build configuration list for PBXProject "codex-fractals-cpp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CBE663A81F40CDB900FBC31B;
+			productRefGroup = CBE663B21F40CDB900FBC31B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CBE663B01F40CDB900FBC31B /* codex-fractals-cpp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CBE663AD1F40CDB900FBC31B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CBE663CA1F40CE4B00FBC31B /* Wireframe.cpp in Sources */,
+				CBE663C11F40CDD300FBC31B /* Renderer.cpp in Sources */,
+				CBE663C21F40CDD300FBC31B /* VectorUtils.cpp in Sources */,
+				CBE663B51F40CDBA00FBC31B /* main.cpp in Sources */,
+				CBE663CD1F40CEAB00FBC31B /* CApp.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CBE663B61F40CDBA00FBC31B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		CBE663B71F40CDBA00FBC31B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		CBE663B91F40CDBA00FBC31B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I",
+					/usr/local/include/eigen3,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		CBE663BA1F40CDBA00FBC31B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I",
+					/usr/local/include/eigen3,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CBE663AC1F40CDB900FBC31B /* Build configuration list for PBXProject "codex-fractals-cpp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBE663B61F40CDBA00FBC31B /* Debug */,
+				CBE663B71F40CDBA00FBC31B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CBE663B81F40CDBA00FBC31B /* Build configuration list for PBXNativeTarget "codex-fractals-cpp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CBE663B91F40CDBA00FBC31B /* Debug */,
+				CBE663BA1F40CDBA00FBC31B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CBE663A91F40CDB900FBC31B /* Project object */;
+}
