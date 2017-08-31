@@ -71,12 +71,10 @@ void CApp::onEvent(SDL_Event &e){
 		case SDL_KEYDOWN:
 			keyStates.insert(std::pair<SDL_Keycode,bool>(e.key.keysym.sym,true));
 			keyStates.at(e.key.keysym.sym) = true;
-			std::cout << e.key.keysym.sym << ": true" << std::endl;
 			break;
 		case SDL_KEYUP:
 			keyStates.insert(std::pair<SDL_Keycode,bool>(e.key.keysym.sym,false));
 			keyStates.at(e.key.keysym.sym) = false;
-			std::cout << e.key.keysym.sym << ": false" << std::endl;
 			break;
 	}
 }

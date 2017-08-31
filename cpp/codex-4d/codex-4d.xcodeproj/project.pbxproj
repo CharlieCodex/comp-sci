@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CB47DD8C1F3C8D6E002D4E98 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB47DD8B1F3C8D6E002D4E98 /* SDL2_ttf.framework */; };
+		C6A5B4DB1F58689E009BB0B7 /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A5B4D91F58689E009BB0B7 /* SDL2_ttf.framework */; };
+		C6A5B4DC1F58689E009BB0B7 /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6A5B4DA1F58689E009BB0B7 /* SDL2.framework */; };
 		CB7F0CDB1F30C3FC00FD9F5F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB7F0CDA1F30C3FC00FD9F5F /* main.cpp */; };
-		CB7F0CE21F30C43A00FD9F5F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB7F0CE11F30C43A00FD9F5F /* SDL2.framework */; };
 		CB7F0CE51F30C56E00FD9F5F /* CApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB7F0CE31F30C56D00FD9F5F /* CApp.cpp */; };
 		CB7F0CE81F30C59B00FD9F5F /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB7F0CE61F30C59B00FD9F5F /* Renderer.cpp */; };
 		CB7F0CEB1F30D7B300FD9F5F /* VectorUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CB7F0CE91F30D7B300FD9F5F /* VectorUtils.cpp */; };
@@ -17,22 +17,25 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		CB7F0CD51F30C3FC00FD9F5F /* CopyFiles */ = {
+		CB7F0CD51F30C3FC00FD9F5F /* Copy Files */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = /usr/share/man/man1/;
 			dstSubfolderSpec = 0;
 			files = (
 			);
+			name = "Copy Files";
 			runOnlyForDeploymentPostprocessing = 1;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		CB47DD8B1F3C8D6E002D4E98 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
+		C6A5B4D51F58676C009BB0B7 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../../usr/local/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
+		C6A5B4D61F58676C009BB0B7 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../../usr/local/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		C6A5B4D91F58689E009BB0B7 /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
+		C6A5B4DA1F58689E009BB0B7 /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		CB7F0CD71F30C3FC00FD9F5F /* codex-4d */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "codex-4d"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CB7F0CDA1F30C3FC00FD9F5F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		CB7F0CE11F30C43A00FD9F5F /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		CB7F0CE31F30C56D00FD9F5F /* CApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CApp.cpp; sourceTree = "<group>"; };
 		CB7F0CE41F30C56E00FD9F5F /* CApp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = CApp.hpp; sourceTree = "<group>"; };
 		CB7F0CE61F30C59B00FD9F5F /* Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Renderer.cpp; sourceTree = "<group>"; };
@@ -48,21 +51,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB47DD8C1F3C8D6E002D4E98 /* SDL2_ttf.framework in Frameworks */,
-				CB7F0CE21F30C43A00FD9F5F /* SDL2.framework in Frameworks */,
+				C6A5B4DB1F58689E009BB0B7 /* SDL2_ttf.framework in Frameworks */,
+				C6A5B4DC1F58689E009BB0B7 /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C6A5B4D41F58676B009BB0B7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6A5B4D91F58689E009BB0B7 /* SDL2_ttf.framework */,
+				C6A5B4DA1F58689E009BB0B7 /* SDL2.framework */,
+				C6A5B4D51F58676C009BB0B7 /* SDL2_ttf.framework */,
+				C6A5B4D61F58676C009BB0B7 /* SDL2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CB7F0CCE1F30C3FC00FD9F5F = {
 			isa = PBXGroup;
 			children = (
-				CB47DD8B1F3C8D6E002D4E98 /* SDL2_ttf.framework */,
-				CB7F0CE11F30C43A00FD9F5F /* SDL2.framework */,
 				CB7F0CD91F30C3FC00FD9F5F /* codex-4d */,
 				CB7F0CD81F30C3FC00FD9F5F /* Products */,
+				C6A5B4D41F58676B009BB0B7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,7 +112,7 @@
 			buildPhases = (
 				CB7F0CD31F30C3FC00FD9F5F /* Sources */,
 				CB7F0CD41F30C3FC00FD9F5F /* Frameworks */,
-				CB7F0CD51F30C3FC00FD9F5F /* CopyFiles */,
+				CB7F0CD51F30C3FC00FD9F5F /* Copy Files */,
 			);
 			buildRules = (
 			);
@@ -116,7 +129,7 @@
 		CB7F0CCF1F30C3FC00FD9F5F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Charlie McVicker";
 				TargetAttributes = {
 					CB7F0CD61F30C3FC00FD9F5F = {
@@ -171,8 +184,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -194,9 +209,20 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CFLAGS = (
+					"-I/usr/local/include/Eigen3",
+					"-I/usr/local/include/SDL2",
+				);
+				OTHER_LDFLAGS = (
+					"/usr/local/bin/sdl2-config",
+					"--libs",
+					"-L/usr/local/lib",
+					"-lSDL2",
+				);
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -215,8 +241,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -232,8 +260,19 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = /usr/local/include;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = (
+					"-I/usr/local/include/Eigen3",
+					"-I/usr/local/include/SDL2",
+				);
+				OTHER_LDFLAGS = (
+					"/usr/local/bin/sdl2-config",
+					"--libs",
+					"-L/usr/local/lib",
+					"-lSDL2",
+				);
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -244,6 +283,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					/usr/local/Frameworks,
 				);
 				HEADER_SEARCH_PATHS = usr/local/include/eigen3;
 				OTHER_CFLAGS = "";
@@ -262,6 +302,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+					/usr/local/Frameworks,
 				);
 				HEADER_SEARCH_PATHS = usr/local/include/eigen3;
 				OTHER_CFLAGS = "";

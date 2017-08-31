@@ -10,8 +10,6 @@
 		CBE663B51F40CDBA00FBC31B /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBE663B41F40CDBA00FBC31B /* main.cpp */; };
 		CBE663C11F40CDD300FBC31B /* Renderer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBE663BE1F40CDD300FBC31B /* Renderer.cpp */; };
 		CBE663C21F40CDD300FBC31B /* VectorUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBE663BF1F40CDD300FBC31B /* VectorUtils.cpp */; };
-		CBE663C61F40CDF500FBC31B /* SDL2_ttf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE663C41F40CDF500FBC31B /* SDL2_ttf.framework */; };
-		CBE663C71F40CDF500FBC31B /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBE663C51F40CDF500FBC31B /* SDL2.framework */; };
 		CBE663CA1F40CE4B00FBC31B /* Wireframe.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBE663C91F40CE4B00FBC31B /* Wireframe.cpp */; };
 		CBE663CD1F40CEAB00FBC31B /* CApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CBE663CB1F40CEAB00FBC31B /* CApp.cpp */; };
 /* End PBXBuildFile section */
@@ -35,8 +33,6 @@
 		CBE663BC1F40CDD300FBC31B /* VectorUtils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = VectorUtils.hpp; path = "../codex-4d/codex-4d/VectorUtils.hpp"; sourceTree = "<group>"; };
 		CBE663BE1F40CDD300FBC31B /* Renderer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Renderer.cpp; path = "../codex-4d/codex-4d/Renderer.cpp"; sourceTree = "<group>"; };
 		CBE663BF1F40CDD300FBC31B /* VectorUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = VectorUtils.cpp; path = "../codex-4d/codex-4d/VectorUtils.cpp"; sourceTree = "<group>"; };
-		CBE663C41F40CDF500FBC31B /* SDL2_ttf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_ttf.framework; path = ../../../../../Library/Frameworks/SDL2_ttf.framework; sourceTree = "<group>"; };
-		CBE663C51F40CDF500FBC31B /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
 		CBE663C81F40CE4B00FBC31B /* Wireframe.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = Wireframe.hpp; path = "../codex-4d/codex-4d/Wireframe.hpp"; sourceTree = "<group>"; };
 		CBE663C91F40CE4B00FBC31B /* Wireframe.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Wireframe.cpp; path = "../codex-4d/codex-4d/Wireframe.cpp"; sourceTree = "<group>"; };
 		CBE663CB1F40CEAB00FBC31B /* CApp.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CApp.cpp; sourceTree = "<group>"; };
@@ -48,8 +44,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CBE663C61F40CDF500FBC31B /* SDL2_ttf.framework in Frameworks */,
-				CBE663C71F40CDF500FBC31B /* SDL2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,8 +56,6 @@
 				CBE663BE1F40CDD300FBC31B /* Renderer.cpp */,
 				CBE663BF1F40CDD300FBC31B /* VectorUtils.cpp */,
 				CBE663C91F40CE4B00FBC31B /* Wireframe.cpp */,
-				CBE663C41F40CDF500FBC31B /* SDL2_ttf.framework */,
-				CBE663C51F40CDF500FBC31B /* SDL2.framework */,
 				CBE663BB1F40CDD300FBC31B /* Renderer.hpp */,
 				CBE663BC1F40CDD300FBC31B /* VectorUtils.hpp */,
 				CBE663C81F40CE4B00FBC31B /* Wireframe.hpp */,
@@ -116,7 +108,7 @@
 		CBE663A91F40CDB900FBC31B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Charlie McVicker";
 				TargetAttributes = {
 					CBE663B01F40CDB900FBC31B = {
@@ -171,8 +163,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -197,6 +191,13 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I",
+					/usr/local/include/eigen3,
+					"-I",
+					/usr/local/include/sdl2,
+				);
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -215,8 +216,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				CODE_SIGN_IDENTITY = "-";
@@ -234,6 +237,13 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I",
+					/usr/local/include/eigen3,
+					"-I",
+					/usr/local/include/sdl2,
+				);
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -249,6 +259,7 @@
 					"$(OTHER_CFLAGS)",
 					"-I",
 					/usr/local/include/eigen3,
+					/usr/local/include/sdl2,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -265,6 +276,7 @@
 					"$(OTHER_CFLAGS)",
 					"-I",
 					/usr/local/include/eigen3,
+					/usr/local/include/sdl2,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -289,6 +301,7 @@
 				CBE663BA1F40CDBA00FBC31B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
