@@ -1,0 +1,123 @@
+body, html{
+	padding: 0;
+	margin: 0;
+	color:#333;
+	height: 100%;
+	overflow: hidden;
+}
+/*Pizza Hut red = #EE3A43*/
+.logo{
+	content:url(https://upload.wikimedia.org/wikipedia/en/thumb/d/d2/Pizza_Hut_logo.svg/1088px-Pizza_Hut_logo.svg.png);
+	padding-top: 25px;
+	width:80%;
+	max-width: 200px;
+	height:auto;
+}
+img.dog{
+	content:url(http://i.imgur.com/T61JLFB.gif);
+	width: 200px;
+	height: auto;
+	float: right;
+	vertical-align: middle;
+	display: inline-block;
+}
+/*Side-nav*/
+.side-bar{
+	display: inline-block;
+	width: 25%;
+	border-right: 1px solid #333;
+	text-align: center;
+	height: 100%;
+	background: #fff;
+	overflow-y: scroll;
+}
+.nav a:hover{
+    background-color: #d7d7d7;
+}
+.nav a{
+	text-align: center;
+	color:#333;
+	text-decoration: none;
+	font-size: 18px;
+	line-height: 48px;
+	display: block;
+}
+/*Dropdown Lists*/
+.dropdown{
+	position: relative;
+	display: inline-block;
+}
+.dropdown-btn{
+	display: inline;
+	text-align: center;
+	font-weight: 100;
+	font-size: 38px;
+	width: 180px;
+	line-height: 85px;
+	border: none;
+	outline: none;
+	cursor:pointer;
+	background: #efefef;
+}
+.dropdown-btn:hover{
+	background: #d7d7d7;
+}
+.dropdown-content{
+	display: none;
+    position: absolute;
+    left:0;
+    bottom:0;
+    transform: translate(0%, 100%);
+    background-color: #efefef;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-content a{
+	text-align: center;
+	color:#333;
+	text-decoration: none;
+	font-size: 18px;
+	line-height: 48px;
+	display: block;
+}
+.dropdown-content a:hover{
+    background-color: #d7d7d7;
+}
+.dropdown:hover .dropdown-content{
+	display: block;
+	text-align: left;
+}
+/*Content and Sections*/
+.content-wrapper{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	display: inline-block;
+	background: #EE3A43;
+	overflow-y: scroll;
+}
+.content{
+	width: 50%;
+	margin:150px 12.5%;
+	min-height: 50%;
+	background: #fff;
+	border-radius: 25px;
+}
+section{
+	padding: 25px;
+}
+section h2{
+	border-bottom: 1px solid #d7d7d7;
+}
+ul.unstyled, ol.unstyled{
+	list-style: none;
+}
+.ingredients{
+	list-style-type: decimal;
+}
+section:target{
+	display: block;
+}
+.inline{
+	display: inline-block;
+}

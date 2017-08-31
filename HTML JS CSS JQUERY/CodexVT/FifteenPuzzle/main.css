@@ -1,0 +1,41 @@
+* {
+    border-collapse: collapse;
+    text-align: center;
+}
+td{
+	height: 75px;
+	width: 75px;
+	line-height: 75px;
+	border: 1px solid black;
+	text-align: center;
+}
+h3{
+	font-weight: normal;
+}
+h1{
+	text-align: center;
+	padding-bottom: 5px;
+	border-bottom: 1px solid black;
+	margin: 15px 25px;
+}
+.content{
+	text-align: center;
+	padding: 25px;
+}
+.content button{
+	margin: 25px;
+}
+table{
+	margin: 0 auto;
+}
+.tile-white{
+	color: black;
+	background: white;
+}
+.tile-red{
+	color: white;
+	background: red;
+}
+.tile-empty{
+	background: grey;
+}

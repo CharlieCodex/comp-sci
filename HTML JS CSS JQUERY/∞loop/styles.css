@@ -1,0 +1,27 @@
+div.padding{
+	width: 33%;
+	display: inline-block;
+}
+div.content{
+	margin-left: auto;
+	display: inline-block;
+}
+body{
+	background-color: #4CAF50;
+}
+div.table{
+	background-color: #673AB7;
+	padding: 0px;
+}
+div.row{
+	display: block;
+	padding: 0px;
+	width: 1000px;
+	height: 100px;
+}
+div.detail{
+	width: 100px;
+	height: 100px;
+	padding: 0px;
+	display: inline-block;
+}

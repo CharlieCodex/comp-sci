@@ -1,0 +1,130 @@
+/*CSS for cross-page elements*/
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,100italic,700,500');
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,100italic,700,500');
+* {
+	padding: 0;
+	margin: 0;
+	color:#333;
+}
+body {
+	background: #efefef url(http://2.bp.blogspot.com/-UDLzg11r0mc/UA2kaLhoTvI/AAAAAAAAB4g/dM_aJZxr-84/s1600/Seamless+black+white+marble+tile+pattern+texture.jpg);
+	font-family: 'Roboto', san-serrif;
+	font-weight: normal;
+}
+.logo{
+	width: 75px;
+	height: auto;
+	padding: 5px;
+	vertical-align: middle;
+}
+/*CSS for header and children*/
+.header{
+	width: 100%;
+	height: 85px;
+	background: #efefef;
+	border-bottom-left-radius: 25px;
+	border-bottom-right-radius: 25px;
+	border-bottom: 1px solid #7e7e7e;
+	font-family: 'Raleway';
+	font-weight: 100;
+	z-index: 600;
+	box-shadow: 4px 0 5px;
+}
+.dropdown{
+	position: relative;
+	display: inline-block;
+}
+.dropdown-btn{
+	display: inline;
+	text-align: center;
+	font-weight: 100;
+	font-size: 38px;
+	width: 180px;
+	line-height: 85px;
+	background: #efefef;
+	border: none;
+	outline: none;
+	cursor:pointer;
+}
+.dropdown-content{
+	display: none;
+    position: absolute;
+    left:0;
+    bottom:0;
+    transform: translate(0%, 100%);
+    background-color: #efefef;
+    min-width: 180px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+.dropdown-list{
+	list-style: none;
+	margin: 0 auto;
+	text-align: center;
+}
+.dropdown-list li{
+	font-size: 18px;
+}
+.dropdown-list a{
+	text-decoration: none;
+	line-height: 24px;
+}
+.dropdown:hover .dropdown-content{
+	display: block;
+	text-align: left;
+}
+/*CSS for content div and children*/
+.content {
+	width: 80%;
+	position: relative;
+	top: 115px;
+	margin-bottom: 115px;
+	margin-left: 10%;
+	padding-top: 25px;
+	background: #fff;
+	border-radius: 25px;
+	box-shadow: 4px 4px 5px;
+	border: 1px solid #7e7e7e;
+}
+
+/*CSS for Table of Contents and children*/
+.table-of-contents{
+	background: #efefef;
+	display: block;
+	padding: 10px;
+	border-radius: 10px;
+	border: 0.5px solid #7e7e7e;
+	margin: 0 25px 25px 25px;
+	box-shadow: 2px 2px 5px;
+}
+
+.table-of-contents h2{
+	font-family: 'Raleway';
+	font-weight: 100;
+}
+.table-of-contents ol{
+	padding-left: 40px;
+}
+.table-of-contents li{
+	padding: 5px 0;
+}
+.table-of-contents a{
+	text-decoration: none;
+	color:#333;
+}
+/*CSS for section.article and children*/
+.article {
+	margin-bottom: 25px;
+	padding: 0 25px;
+}
+.article h2{
+	font-family: 'Raleway';
+	font-weight: 100;
+	border-bottom: 1px solid #7e7e7e;
+	font-weight: normal;
+	padding-bottom: 2px;
+	margin-bottom: 5px;
+}
+.article p {
+	text-indent: 2em;
+	padding-bottom: 5px;
+}

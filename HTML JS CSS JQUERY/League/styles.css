@@ -1,0 +1,44 @@
+div{
+	padding: 0px;
+	margin: 0px;
+}
+#champions{
+	width: 33%;
+	margin: 0 auto;
+	display: table;
+	border: none;
+}
+div.wrapper{
+	display: inline-block;
+	width:100%;
+	background-color: #222;
+}
+div.champion{
+	text-align: center;
+	display: inline-block;
+	border:3px #333 solid;
+	background-color: #fff;
+}
+div.champion p{
+	padding: 0px;
+	margin: 0px;
+}
+div.padding{
+	margin: 0px;
+	padding: 0px;
+	width: 20%;
+	display: inline-block;
+}
+#searchContainer{
+	width: 100%;
+	margin: 10px;
+	text-align: center;
+}
+div.info{
+	width: 66%;
+	display: inline-block;
+	vertical-align: top;
+}
+div.info h1{
+	text-align: center;
+}

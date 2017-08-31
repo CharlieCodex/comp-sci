@@ -1,0 +1,53 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="theme.css">
+<script type="text/javascript" src = 'forms.js'></script>
+<title>Letter Template</title>
+</head>
+<body onload = 'init()'>
+<div id = 'container-form'>
+	<form id = 'form' action = 'javascript:submit();'>
+		
+		<label for = 'name-from'>Your Name:</label>
+		<input type = 'text' name = 'name-from' placeholder = 'First, Last'>
+		</br>
+		
+		<label for = 'street-from'>Your Street Address: </label>
+		<input type = 'text' name = 'street-from' placeholder = 'Street Name, Number'>
+		</br>
+
+		<label for = 'csz-from'>Your City, State Abbreviation and Zipcode: </label>
+		<input type = 'text' name = 'csz-from' placeholder = 'City, State Abbr. Zip'>
+		</br>
+		<label for = 'name-for'>Recipient's Name:</label>
+		<input type = 'text' name = 'name-for' placeholder = 'First, Last'>
+		</br>
+		
+		<label for = 'street-for'>Recipient's Street Address: </label>
+		<input type = 'text' name = 'street-for' placeholder = 'Street Name, Number'>
+		</br>
+
+		<label for = 'csz-for'>Recipient's City, State Abbreviation and Zipcode: </label>
+		<input type = 'text' name = 'csz-for' placeholder = 'City, State Abbr. Zip'>
+		</br>
+		</br>
+		<input type = 'submit'>
+	</form>
+</div>
+
+<div id = 'container-letter'>
+	<div id = 'address-return'>
+		<p id = 'name-return'>...</p>
+		<p id = 'street-return'>...</p>
+		<p id = 'csz-return'>...</p>
+	</div>
+	<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Benjamin_Franklin2_1895_Issue-1c.jpg/220px-Benjamin_Franklin2_1895_Issue-1c.jpg" id = 'stamp'>
+
+	<div id = 'address-to'>
+		<p id = 'name-to'>...</p>
+		<p id = 'street-to'>...</p>
+		<p id = 'csz-to'>...</p>
+	</div>
+</div>
+</body>
+</html>

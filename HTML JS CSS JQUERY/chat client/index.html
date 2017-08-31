@@ -1,0 +1,79 @@
+<html ng-app="CodexMessenger">
+<head>
+
+<title>Codex Chat Client</title>
+
+<!-- CSS Vendors -->
+
+<link href='css/bootstrap.css' rel='stylesheet' type='text/css'>
+
+<!-- Other CSS -->
+
+<link rel="stylesheet" type="text/css" href="css/themes.css">
+
+<!-- Vendors -->
+
+<script type="text/javascript" src = "js/vendors/jquery.min.js"></script>
+<script type="text/javascript" src = "js/vendors/angular.min.js"></script>
+<script type="text/javascript" src = "js/vendors/peer.js"></script>
+<script type="text/javascript" src = "js/vendors/js.cookie.js"></script>
+<script type="text/javascript" src = "js/vendors/bootstrap.js"></script>
+
+<!-- JS -->
+
+<script type="text/javascript" src = "js/core.js"></script>
+<script type="text/javascript" src = "js/app.js"></script>
+<script type="text/javascript" src = "js/directives/chat-hole.js"></script>
+<script type="text/javascript" src = "js/directives/my-info.js"></script>
+<script type="text/javascript" src = "js/directives/add-contact.js"></script>
+<script type="text/javascript" src = "js/directives/top-banner.js"></script>
+<script type="text/javascript" src = "js/directives/close-overlay.js"></script>
+<script type="text/javascript" src = "js/directives/overlay.js"></script>
+<script type="text/javascript" src = "js/directives/linkz.js"></script>
+<script type="text/javascript" src = "js/controllers/util.js"></script>
+
+</head>
+
+<body ng-controller = "UtilController as util" linkz>
+	<top-banner></top-banner>
+	<div class = "container-fluid">
+		<div id = "contacts" class = "col-xs-12 col-md-3">
+			<ul class = "list-group">
+				<li class = 'list-group-item add clearfix'>
+					<div class = "col-xs-10">
+						<form class="has-feedback" role="form" ng-class="{'has-success':toAdd.length == 16}">
+							<input type = "text" ng-model = "search.name" ng-change = "toAdd = search.name" class = "form-control form-control">
+						</form>
+					</div>
+		 			
+					<div class = "col-xs-1 col-md-2">
+						<button class = "btn-none" ng-click = "tryConnection(toAdd)">
+							<span class="glyphicon glyphicon-plus" id = "addContact"></span>
+						</button>
+					</div>
+				</li>
+				<li ng-repeat = "conn in connections | filter:search" class = "list-group-item" ng-class="{active:openConn == $index}">
+					<span class="badge" ng-show = "conn.unread>0">{{conn.unread}}</span>
+					<span>{{conn.name}}</span>
+				</li>
+			</ul>
+		</div>
+		<chat-hole class = "col-xs-12 col-md-9 well well-lg"></chat-hole>
+	</div>
+	<my-info></my-info>
+	<!--<add-contact></add-contact>-->
+	<div overlay = "overlay.overlay==='connecting'">
+		<div class = 'content'>
+			<h3>Connecting...</h3>
+			<close-overlay></close-overlay>
+			<ul>
+				<li>Creating Connection<i class = 'material-icons'>check_box_outline_blank</i>
+				<li>Finding ICE Servers<i class = 'material-icons'>check_box_outline_blank</i>
+				<li>Waiting for approval<i class = 'material-icons'>check_box_outline_blank</i>
+				<li>Wrapping things up<i class = 'material-icons'>check_box_outline_blank</i>
+			</ul>
+		</div>
+	</div>
+</body>
+
+</html>

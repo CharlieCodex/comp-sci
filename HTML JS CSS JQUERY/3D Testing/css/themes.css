@@ -1,0 +1,50 @@
+.glyphicon-lg{
+	line-height: 48px;
+	font-size: 18px;
+}
+
+.navbar-inverse{
+	color:#e0e0e0;
+	vertical-align: middle!important;
+}
+.container{
+	text-align: center;
+}
+canvas{
+	border: 1px solid black;
+	border-radius: 25px;
+	width: 100%;
+	height: auto;
+}
+#main-container{
+	margin-top:25px;
+}
+.point-list{
+	padding:0;
+	width: 100%;
+	list-style: none;
+	border-left:1px solid #333;
+	overflow: hidden;
+	border-right:1px solid #333;
+	background: #888888;
+}
+.point-list li{
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid #333;
+}
+.chords{
+	padding:0;
+	display: flex;
+	width: 100%;
+	list-style: none;
+	overflow: hidden;
+}
+.chords li{
+	width: 25%;
+	border:none;
+	overflow: hidden;
+}
+.chords li:first-child{
+	border-right:1px solid black;
+}

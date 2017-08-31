@@ -1,0 +1,210 @@
+body{
+	margin: 0px;
+	padding: 0px;
+}
+#addContact{
+	width: 34px;
+	height: 34px;
+	line-height: 34px;
+	text-align: center;
+}
+chat-hole{
+	display: inline-flex;
+	height: calc(100% - 95px);
+	padding: 19px;
+}
+.add form{
+	margin: 0;
+}
+hr{
+	border: 0.5px solid rgba(0, 0, 0, 0.137255);
+}
+.glyphicon-lg{
+	line-height: 48px;
+	font-size: 18px;
+}
+.navbar-inverse{
+	color:#e0e0e0;
+	vertical-align: middle!important;
+}
+.btn-none{
+	background-color: inherit;
+	border:none;
+	outline: none;
+	padding: 0px;
+	margin: 0px;
+}
+.fill-height {
+    min-height: 100%;
+    height:auto !important; /* cross-browser */
+    height: 100%; /* cross-browser */
+}
+.form-icon{
+	position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    display: block;
+    width: 34px;
+    height: 34px;
+    line-height: 34px;
+    text-align: center;
+}
+top-banner .btn{
+	padding: 5px;
+}
+icon-top{
+	line-height: 48px;
+}
+header{
+	font-family: 'Roboto';
+	height: 40px;
+	background-color: #e0e0e0;
+	font-weight: 300;
+	text-align: center;
+	font-size: 28px;
+	padding-top: 10px;
+	border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0, 0, 0, 0.137255);
+    padding-bottom:1px;
+}
+footer{
+	background-color: #212121;
+	color: white;
+}
+body>.content{
+	width: 100%;
+	margin: 0;
+	text-align: center;
+}
+.connection{
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+#chatClient{
+    vertical-align:top;
+    text-align: center;
+	display: inline-block;
+	height: 100%;
+	left: 200px;
+	right: 0px;
+	position: absolute;
+}
+.chatLog{
+	display: block;
+	margin-left: 25%;
+	font-family: 'Roboto Condensed';
+	font-weight: 200;
+	font-size: 16px;
+	flex-grow:1;
+	flex-shrink:1;
+	border-top: none;
+	border-bottom: none;
+	width:50%;
+	margin-bottom: 8px;
+	overflow-y: scroll;
+}
+.inputContainer{
+	flex-grow:0;
+	flex-shrink:0;
+	height: 100px;
+}
+.chatInput{
+	outline: none;
+	font-family: 'Roboto';
+	font-size: 14px;
+	border:none;
+}
+.chatLog div{
+	margin: 5px;
+	color:black;
+	border-radius: 5px;
+	background-color: #64B5F6;
+	display: block;
+	float: left;
+	clear: both;
+	padding: 0px 5px;
+}
+.chatLog div.them{
+	clear: both;
+	float: right;
+	background-color: #81C784;
+}
+#myInfo{
+	float: left;
+	height: 35px;
+	line-height: 35px;
+	padding-left:10px;
+}
+h3{
+	font-weight: 200;
+	text-align: center;
+}
+.overlay{
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(21,21,21,0.5);
+	text-align: center;
+	z-index: 100;
+}
+.overlay .content{
+	position: absolute;
+	display: block;
+	background-color: white;
+	width: 200px;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	border-width: 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.137255);
+}
+.overlay ul{
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+}
+.overlay ul li{
+	margin-bottom: 10px;
+}
+.overlay ul span{
+	font-size: 16px;
+}
+#myInfo span{
+	margin-left: 5px;
+	margin-top: -50%;
+	display: inline-block;
+	text-align: right;
+	font-size: 12px;
+	line-height: normal;
+	vertical-align: bottom;
+}
+.icon{
+	margin: auto;
+	display: inline-block;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	background-color: black;
+}
+.close-overlay{
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	transform:translate(0,0);
+	border:none;
+	float: right;
+	background-color: white;
+}
+.inputContainer{
+	border-top:1px solid #64B5F6;
+}
+.cling {
+   margin: 0 !important;
+}

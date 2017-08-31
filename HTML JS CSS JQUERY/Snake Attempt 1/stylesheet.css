@@ -1,0 +1,49 @@
+html
+{
+	background-color: #dddddd;
+}
+h1
+{
+	text-align: center;
+}
+h2
+{
+	font-size: 20px;
+}
+table, th, td
+{
+    border: 1px solid black;
+    padding: 0px;
+    border-collapse: collapse;
+}
+div.centered
+{
+	text-align: center;
+}
+#tableDiv
+{
+	width: 550px;
+	height: 500px;
+	background-color: #ffffff;
+    border: 8px solid black;
+    position:absolute;
+    left:50%;
+    margin-left: -275px;
+}
+#headingDiv
+{
+	margin-bottom: 15px;
+}
+table.fixed
+{
+	table-layout: fixed;
+}
+tr
+{
+	height: 10px;
+}
+td
+{
+	width: 10px;
+	text-align: center;
+}

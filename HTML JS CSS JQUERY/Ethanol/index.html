@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<style> 
+.console
+{
+	border: solid 5px black;
+	display: block;
+	width: 100%;
+	height: 200px;
+	overflow: auto;
+}
+.phase body
+{
+    margin-right: 5px;
+    margin-left: 5px;
+}
+.phase
+{
+	width: 50%;
+	margin-left: 25%;
+	float: center;
+	clear: center;
+}
+ul
+{
+	width: 100%;
+	padding: 0;
+	text-align: center;
+}
+a.title
+{
+	font-size: 28px;
+	font-style: bold;
+	font:Verdana;
+	font-weight: 500;
+	line-height: 28px;
+	text-decoration: none; 
+	color: black;
+}
+.steps ul li {
+    display:block;
+}
+
+.steps ul li div {
+    display: block;
+    color:black;
+    background-color: #666666;
+    padding: 10px;
+    border-radius: 100px;
+}
+
+.steps ul li div.phase:target {
+    display:block;
+    color:black;
+    opacity: 100%;
+    background-color: #BBBBBB;
+    padding: 10px;
+    border-radius: 100px;
+}
+li
+{
+	width: 100%;
+    float: left;
+    clear: left;
+}
+</style>
+
+<script>
+var targetLocation;
+var targetObject;
+var logObject;
+var logDiv;
+console.log = log;
+function log(message)
+{
+	logObject.innerHTML += '</br>' + message;
+	logDiv.scrollTop = logDiv.scrollHeight;
+}
+function keyPress(evt)
+{
+	var keyCode = Number(evt.keyCode);
+	console.log(keyCode);
+	switch(keyCode)
+	{
+		case 38: navigateList(-1); break;
+		case 40: navigateList(+1); break;
+	}
+}
+
+function navigateList(dist)
+{
+	updateActiveObject();
+	var stepslist = document.getElementById('stepslist');
+	var phases = stepslist.getElementsByTagName('li');
+	var phaseNumber = Number(targetObject.id.charAt(5)) + dist;
+	if (phaseNumber > 0 && phaseNumber < phases.length +1)
+	{
+		window.location.hash = ('#phase'+phaseNumber)
+		updateActiveObject();
+	};
+}
+
+function updateActiveObject(){
+	logObject = document.getElementById('text');
+	logDiv = document.getElementById('console');
+	var stepslist = document.getElementById('stepslist');
+	var phases = stepslist.getElementsByTagName('li');
+	for (var i = phases.length - 1; i >= 0; i--) {
+		phases[i].getElementsByTagName('a')[0].setAttribute('tabindex',0);
+	};
+	targetLocation = (window.location.hash).substr(1);
+	console.log('removed, on parsed href: '+targetLocation+'link');
+	targetObject = document.getElementById(targetLocation);
+	targetObject.setAttribute('tabindex',-1);
+}
+</script>
+<body onload = 'updateActiveObject()' onkeydown = 'keyPress(event)'>
+<div class = 'console' id = 'console'>
+<p id = 'text'>Console Starts Here</p>
+</div>
+<div class="steps">
+<ul id = "stepslist">
+   	<li><a href="#phase1" class = "title" id = 'phase1link' onclick = "updateActiveObject()">1: Ethanol Combustion</a>   
+   	<div id="phase1" class = "phase">3C<sub>2</sub>H<sub>6</sub>O + 9O<sub>2</sub> ==> 6CO<sub>2</sub> + 9H<sub>2</sub>O</div>
+	</li>
+	<li><a href="#phase2" class = "title" id = 'phase2link' onclick = "updateActiveObject()">2: Photosynthesis</a>   
+   	<div id="phase2" class = "phase">6CO<sub>2</sub>+ 6H<sub>2</sub>O ==> 6O<sub>2</sub> + C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>. The 6O<sub>2</sub> will be saved for later</div>
+	</li>
+	<li><a href="#phase3" class = "title" id = 'phase3link' onclick = "updateActiveObject()">3: Anerobic Reperation</a>   
+   	<div id="phase3" class = "phase">6O<sub>2</sub> + C<sub>6</sub>H<sub>12</sub>O<sub>6</sub>==> 6O<sub>2</sub> + C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></div>
+	</li>
+</ul>  
+</div>
+</body>
+</html>

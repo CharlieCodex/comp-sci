@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="http://goo.gl/IKvfkJ"></script>
+<link rel="stylesheet" type="text/css" href="theme.css">
+<script type="text/javascript">
+var tbl;
+var values = [];
+function rand(min, max) {
+  return Math.floor(Math.random() * (max - min)) + min;
+}
+Array.prototype.removeIntersection = function(otherArray) {
+	
+};
+function boardCreate(){
+	var b = [];
+	//loop rows (y)
+	for (var j = 0; j < 9; j++) {
+		cur = [1,2,3,4,5,6,7,8,9];
+		b[j]=[];
+		//loops cells (x)
+		for (var i = 0; i < 9; i++) {
+			var used = [];
+			for (var y = 0; y < j; y++) {
+				var tmp = b[y]==undefined?null : b[y][i];
+				used.push(tmp);
+				for(var x = 0; x < j)
+			}
+			cur.removeIntersection(used);
+			b[j].push(cur[rand(0,cur.length)])
+		};
+	};
+	console.log(b);
+}
+function tableCreate(x, y, div, id)
+{
+	var div = document.getElementById(div);
+	var tbl = document.createElement('table');
+	var tbdy = document.createElement('tbody');
+	tbl.setAttribute('class','fixed');
+	for (var i = 0; i < x; i++) {
+	    var tr = document.createElement('tr');
+
+		for (var j = 0; j < y; j++) {
+    		var td = document.createElement('td');
+    		
+
+			td.appendChild(document.createTextNode(values[j][i]));
+            tr.appendChild(td);
+        }
+    	tbdy.appendChild(tr);
+    }
+   	tbl.appendChild(tbdy);
+   	div.appendChild(tbl);
+   	tbl.setAttribute('id',id);
+   	return tbl;
+}
+jQuery(document).ready(function($) {
+	tableCreate(9,9, 'tablediv', 'tbl');
+	tbl = $('#tbl');
+});
+</script>
+</head>
+<body>
+	<div id='tablediv'>
+
+	</div>
+</body>
+</html>

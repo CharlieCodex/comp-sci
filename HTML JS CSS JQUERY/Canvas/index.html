@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fun with Canvas2D</title>
+<script type="text/javascript">
+var canvas;
+var ctx;
+var gameLoop;
+var mouseX;
+var mouseY;
+function init()
+{
+	canvas = document.createElement('canvas');
+	canvas.width = 512;
+	canvas.height = 512;
+	ctx = canvas.getContext('2d');
+	gameLoop = window.setInterval(mainLoop,1000/60);
+	document.body.appendChild(canvas);
+}
+var mainLoop = function()
+{
+	ctx.lineWidth=16;
+	ctx.fillStyle = '#ffffff';
+	ctx.fillRect(0,0,canvas.width,canvas.height);
+	ctx.strokeStyle = '#000000';
+	ctx.beginPath();
+	ctx.arc(canvas.width/2,canvas.height/2,64,0,Math.PI*2);
+	ctx.stroke();
+
+	var angle =
+	Math.atan((mouseY-canvas.width/2)/(mouseX-canvas.height/2));
+	if(mouseX<canvas.width/2)
+	{
+		angle+=Math.PI;
+	}
+	ctx.lineWidth=8;
+	ctx.beginPath();
+	ctx.strokeStyle = '#ee1111';
+	ctx.arc(canvas.width/2,canvas.height/2,64,angle-0.25,angle+0.25);
+	ctx.stroke();
+	angle+=Math.PI
+	ctx.beginPath();
+	ctx.strokeStyle = '#1111ee';
+	ctx.arc(canvas.width/2,canvas.height/2,64,angle-Math.PI/2,angle+Math.PI/2);
+	ctx.stroke();
+	drawTriangle()
+}
+function drawTriangle(){
+	ctx.strokeStyle = '#11ee11';
+	ctx.lineWidth=2;
+	ctx.beginPath();
+	ctx.moveTo(canvas.width/2,canvas.height/2);
+	ctx.lineTo(mouseX,mouseY);
+	ctx.lineTo(canvas.width/2,mouseY);
+	ctx.lineTo(canvas.width/2,canvas.height/2);
+	ctx.stroke();
+}
+function mouseMove(){
+	mouseX = event.clientX;
+	mouseY = event.clientY;
+}
+</script>
+</head>
+<body onload = 'init()' onmousemove = 'mouseMove()'>
+</body>
+</html>

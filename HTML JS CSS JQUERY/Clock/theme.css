@@ -1,0 +1,26 @@
+* {
+	transition: all 10s;
+}
+body
+{
+	padding: 0px;
+	margin: 0px;
+}
+.container
+{
+	background-color: white;
+	display: block;
+	height: 100%;
+	padding: 0px;
+	margin: 0px;
+	text-align: center;
+}
+.night {
+	background: black;
+}
+canvas
+{
+	border-radius: 50%;
+	padding-top: -40%;
+	margin: 0 auto;
+}

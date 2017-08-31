@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fractals</title>
+	<!--Vendors-->
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<!--Core/UI-->
+	<script type="text/javascript" src="core.js"></script>
+	<!--Equation imports-->
+	<script type="text/javascript" src="3d-equations.js"></script>
+	<!--Rendering tools-->
+	<script type="text/javascript" src="canvas.js"></script>
+	<link rel="stylesheet" type="text/css" href="main.css">
+</head>
+<body>
+	<h1>Fractals - 3D Beta</h1>
+	<div class="flex container">
+		<div class="sidebar">
+			<h2>Basic Settings</h2>
+			<form class="settings">
+				<label for="points">Number of seed points: </label>
+				<input type="number" name="points" value="1000">
+				<label for="dems">Seed point range: </label>
+				<input type="number" name="dems" value="2">
+				<label for="scale">Scale: </label>
+				<input type="number" name="scale" value="1">
+				<label for="map">Mapper Function(s)?</label>
+				<select name="maps" multiple>
+				</select>
+				<label for="map">Color scheme?</label>
+				<select name="color">
+				  <option value="gsgrad">Grayscale (gradient)</option>
+				  <option value="gsbin">Grayscale (binary)</option>
+				  <option value="clgrad">Color (gradient)</option>
+				  <option value="clbin">Color (binary)</option>
+				  <option value="inverted">Inverted (white on black)</option>
+				</select>
+				<label for="deep">Continuous iterations?</label>
+				<input type="checkbox" name="deep" checked>
+				<label for="keep">Keep points?</label>
+				<input type="checkbox" name="keep" checked>
+				<label for="axis">Axis?</label>
+				<input type="checkbox" name="axis">
+				<label for="grid">Grid lines?</label>
+				<input type="checkbox" name="grid">
+				<label for="rotate">Autorotate?</label>
+				<input type="checkbox" name="rotate">
+				<label for="angle0">Yaw</label>
+				<input type="number" name="angle0" step=".01">
+				<label for="angle1">Pitch</label>
+				<input type="number" name="angle1" step=".01">
+			</form>
+			<h2>Function Parameters</h2>
+			<form class="params">
+				<p>For Lorenz</p>
+				<input type="number" name="lorenz.sigma" placeholder="sigma" value="10">
+				<input type="number" name="lorenz.b" placeholder="beta" value="2.66666666667">
+				<input type="number" name="lorenz.r" placeholder="rho" value="28">
+			</form>
+		</div>
+		<div class="content">
+			<div class="controls">
+				<button onclick="startDraw()">Go!</button>
+				<button onclick="addPoints()">More points!</button>
+				<button onclick="clearAll()">Clear (HELP I DON'T LIKE IT)</button>
+				<button onclick="download()">Save (Download)</button>
+				<button onclick="test()">Test (Special points)</button>
+			</div>
+			<div class="wrapper">
+				<canvas id="out" width="720" height="450"></canvas>
+			</div>
+			<div class="presets">
+				<ul class="defaults">
+					<li>
+						<h3>Wormhole</h3>
+						<img class="thumbnail" src="/res/wormhole-thumbnail.png">
+					</li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html lang = "en">
+<head>
+	<style>
+	h1{
+		font-size: 36px;
+		color: #00FF00;
+	}
+	</style>
+	<link rel="stylesheet" type="text/css" href="stylesheet.css">
+	<script>
+	function switchActiveStyleSheet(index)
+	{
+		for (var j = 0; j < document.styleSheets.length; j++)
+		{
+			document.styleSheets[j].disabled = !(j == index);
+		}
+		return;
+	}
+	</script>
+</head>
+<body>
+<h1>
+	Basic HTML with CSS
+</h1>
+<div align = "center">
+<select id = "sheetSelector">
+	<optgroup label = "Pick a stylesheet">
+		<option>Style Sheet 1</option>
+		<option>Style Sheet 2</option>
+	</optgroup>
+</select>
+<button onclick = "switchActiveStyleSheet(document.getElementById('sheetSelector').selectedIndex)" >Switch to sheet!</button>
+</div>
+</body>
+</html>

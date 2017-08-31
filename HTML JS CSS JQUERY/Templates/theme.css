@@ -1,0 +1,43 @@
+div#container-letter{
+	padding:0px;
+	margin-left: auto;
+	margin-right:auto;
+	height:350px;
+	width: 500px;
+	background: #ffd;
+	border:5px solid black;
+}
+div#address-return{
+	width:33%;
+	padding: 5px;
+	float:  left;
+	margin:  0px;
+}
+div#address-return p{
+	padding:0px;
+	margin: 0px;
+}
+div#address-to{
+	text-align: left;
+	width: 50%;
+	margin-top: 30%;
+	margin-left: 33%;
+}
+img#stamp{
+	float:right;	
+	width: auto;
+	height: 100px;
+}
+label{
+	width:350px;
+	text-align: right;
+	display: inline-block;
+}
+input{
+	display: inline-block;
+}
+form{
+	width: 50%;
+	margin-left: 25%;
+	text-align: center;
+}

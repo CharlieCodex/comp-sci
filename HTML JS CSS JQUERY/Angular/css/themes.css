@@ -1,0 +1,83 @@
+body{
+	font-family: 'Roboto', sans-serif;
+	font-family: 'Roboto Slab', serif;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-family: 'Raleway', sans-serif;
+	margin:0px;
+	padding:0px;
+}
+header{
+	text-align: center;
+	font-weight: 200;
+	font-size: 1.5em;
+	background-color: #e0e0e0;
+	padding: 5px;
+}
+.contact-list{
+	padding: 0px;
+}
+.contact{
+	font-family: 'Roboto', sans-serif;
+	font-weight: 200;
+	color:white;
+	list-style: none;
+	padding: 5px 10px;
+}
+.contact .sub-heading{
+	font-size: 0.75em;
+	text-align: right;
+	font-style: italic;
+}
+.sidebar{
+	background-color: #212121;
+}
+.seem-bottom{
+	border-bottom: 0.5px solid rgba(0, 0, 0, 0.137255);
+}
+.seem-right{
+	border-right: 0.5px solid rgba(0, 0, 0, 0.137255);
+}
+.seem-left{
+	border-left: 0.5px solid rgba(0, 0, 0, 0.137255);
+}
+.seem-top{
+	border-top: 0.5px solid rgba(0, 0, 0, 0.137255);
+}
+.pull-right{
+	float:right;
+	text-align: right;
+}
+.pull-center{
+	text-align: center;
+}
+.pull-left{
+	float:left;
+	text-align: left;
+}
+.content{
+	width: 100%;
+}
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}

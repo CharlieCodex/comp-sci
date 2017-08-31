@@ -1,0 +1,46 @@
+<html>
+<head>
+<title>Video Chat Thing</title>
+<script type="text/javascript" src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+<script type="text/javascript" src = 'http://cdn.peerjs.com/0.3/peer.js'></script>
+<script type="text/javascript" src = 'core.js'></script>
+</head>
+
+<body>
+
+	<div>
+		<div id = 'video-container'>
+		Your Friend<video id='thier-video' autoplay></video>
+		<video id='my-video' muted = 'false' autoplay></video>
+		</div>
+	</div>
+
+	<div>
+		<h2>Super-simple PeerJS Chat</h2>
+
+		<div id = 'step1'>
+			<p>Please click 'allow' on the top of the screen so that we can access the video and audio media streams on your computer</p>
+		</div>
+		<div id ='step1-error'>
+			<p>Could not get microphone or video, <a href = '#' id ='step1-retry'>retry</a>?</p>
+		</div>
+
+		<div id = 'step2'>
+			<p>My peer id: <span id = 'my-id'>...</span></p>
+
+			<p>Share this id with others so they can call you.</p>
+
+			<p><span id= 'subhead'>Make a call</span></br>
+				<input type = 'text' placeholder = 'Call user id...' id = 'callto-id'>
+				<a href="#" id='make-call'>Call</a> 
+			</p>
+		</div>
+
+		<div id = 'step3'>
+			<p>Currently speeking with: <span id = 'their-id'>...</span></p>
+			<p><a href="#" id = 'end-call'>End Call</a></p>
+		</div>
+	</div>
+
+</body>
+</html>

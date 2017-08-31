@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="font.css">
+<link rel="stylesheet" type="text/css" href="theme.css">
+<script>
+var out;
+var timer;
+var one_day=1000*60*60*24;
+var progress;
+Date.daysBetween = function( date1, date2 ) {
+  // Convert both dates to milliseconds
+  var date1_ms = date1.getTime();
+  var date2_ms = date2.getTime();
+
+  // Calculate the difference in milliseconds
+  var difference_ms = date2_ms - date1_ms;
+    
+  // Convert back to days and return
+  return Math.round(difference_ms);
+}
+function init()
+{
+	out = document.getElementById('out');
+  progress = document.getElementById('prog');
+	update();
+	timer =	window.setInterval(update,1000)
+}
+function update()
+{
+	var dif = Date.daysBetween(new Date(),new Date(2017,12,15));
+	progress.value = dif / Date.daysBetween(new Date(2016,11,18), new Date(2017,4,26))/100000;
+	out.innerHTML = dhms(dif);
+}
+function dhms(t){
+    var cd = 24 * 60 * 60 * 1000,
+        ch = 60 * 60 * 1000,
+        cm = 60 * 1000,
+        d = Math.floor(t / cd),
+        h = Math.floor( (t - d * cd) / ch),
+        m = Math.round( (t - d * cd - h * ch) / cm),
+        s = (60 + Math.round( (t - d * cd - h * ch - m * cm) / 1000)) % 60;
+        pad = function(n){ return n < 10 ? '0' + n : n; };
+  	if( m === 60 ){
+    	h++;
+    	m = 0;
+  	}
+  	if( h === 24 ){
+    	d++;
+    	h = 0;
+  	}
+  return [d, pad(h), pad(m), pad(s)].join(':');
+}
+
+</script>
+</head>
+<body onload = 'init()'>
+<h1 id = 'heading'>STAR</br>WARS</h1>
+<p id = 'out'></p>
+<span>
+<img src="saber.png">
+<progress max = '14504148' id = 'prog'></progress>
+</span>
+</body>
+<html/>

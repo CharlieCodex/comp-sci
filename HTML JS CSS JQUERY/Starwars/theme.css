@@ -1,0 +1,28 @@
+h1{
+	font-weight: normal;
+	font-size: 300px;
+}
+progress{
+	position: relative;
+	top: 2.5px;
+	left: -45px;
+	display: inline-block;
+	float;
+	z-index: -1;
+}
+body
+{
+	background-color: #000;
+	color: #ff6;
+	font-size: 60px;
+	text-align: center;
+	font-family: STARWARS;
+}
+img{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	display: inline-block;
+	height: 40px;
+	width: auto;
+}

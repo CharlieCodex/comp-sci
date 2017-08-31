@@ -1,0 +1,8 @@
+<div>
+	<div class = 'connection' ng-repeat = "conn in connections" ng-show = "">
+		<div class = "chatLog"><p>{{conn.lastMsg}}</p></div>
+		<div class = 'inputContainer'>
+			<input type = "text" class = "chatInput" placeholder="Type a message here" ng-model = "conn.toSend" ng-keypress = "($event.which == 13)?connCtrl.send(conn.toSend):0">
+		</div>
+	</div>
+</div>

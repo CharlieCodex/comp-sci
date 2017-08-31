@@ -1,0 +1,74 @@
+body, html{
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	background: #333;
+	color: #eee;
+}
+a{
+	text-decoration: none;
+	color: inherit;
+}
+.nav{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 149px;
+	background: #eee;
+	padding-left: 20px;
+	color:#333;
+	border-bottom:1px solid #333;
+}
+.nav h1{
+	padding-right: 50px;
+	text-align: left;
+	display: block;
+}
+.nav ul{
+	display: inline;
+	padding:0;
+	list-style: none;
+	padding-bottom: 20px;
+}
+.nav li{
+	display: inline;
+	padding: 12px;
+}
+.nav li:hover{
+	padding: 10px;
+	border: 2px solid #333;
+	border-radius: 25px;
+}
+.nav button{
+	border: none;
+	background: inherit;
+    outline:none;
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+}
+div.content{
+	padding: 0;
+	margin: 0;
+	display: block;
+	min-height: 100%!important;
+	height: 100%;
+	overflow-y: scroll;
+}
+section.primary .jump-fix{
+	border: none;
+	padding-bottom: 150px;
+}
+section.primary{
+	display: block;
+	padding: 0px 20px;
+	margin: 0;
+	height: 100%;
+	background: #333;
+	color: #eee;
+}
+section.primary:nth-child(2n+2){
+	background: #eee;
+	color: #333;
+}

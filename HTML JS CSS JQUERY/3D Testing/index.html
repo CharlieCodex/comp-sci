@@ -1,0 +1,51 @@
+<html ng-app = "3DRendering">
+<head>
+	<title>3D Tests</title>
+
+	<!--Vendors-->
+
+	<script type="text/javascript" src = "vendors/jquery.min.js"></script>
+	<script type="text/javascript" src = "vendors/angular.min.js"></script>
+	<script type="text/javascript" src = "vendors/peer.js"></script>
+	<script type="text/javascript" src = "vendors/js.cookie.js"></script>
+	<script type="text/javascript" src = "vendors/bootstrap.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+	<!--Files-->
+
+	<link rel="stylesheet" type="text/css" href="css/themes.css">
+	<script type="text/javascript" src = "js/app.js"></script>
+	<script type="text/javascript" src = "js/game.js"></script>
+
+</head>
+<body>
+	<div class = "container" game id="main-container">
+		<div class = "col-xs-3 well">
+			<ul class="point-list">
+				<li ng-repeat="point in vm.obj.points track by $index"
+					style="
+						color: rgb({{vm.obj.colors[$index][0]}},{{vm.obj.colors[$index][1]}},{{vm.obj.colors[$index][2]}});">
+					<ul class="chords">
+						<li>
+							<span>{{$index}}</span>
+						</li>
+						<li ng-repeat="chord in point track by $index">
+							<span>{{chord | limitTo : 5}}</span>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div class = "col-xs-6">
+			<canvas width = "1200" height = "1200" ng-mousemove="vm.mouseMove($event)"></canvas>
+		</div>
+		<div class = "col-xs-3 well">
+			<label for="showPoints">Draw Points?</label>
+			<input type="checkbox" name="showPoints" ng-model="vm.showPoints">
+			</br>
+			<label for="showLines">Draw Lines?</label>
+			<input type="checkbox" name="showLines" ng-model="vm.showLines">
+		</div>
+	</div>
+</body>
+</html>

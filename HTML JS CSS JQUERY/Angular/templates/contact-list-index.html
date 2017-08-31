@@ -1,0 +1,7 @@
+<ul class = "contact-list" ng-controller = "ContactController as contacts">
+	<li class = "contact seem-bottom" ng-repeat = "contact in contacts.contacts" ng-click = "content.switchConversation(contacts.contacts.indexOf(contact))">
+		<p>{{contact.name}}</p>
+		<p class = "sub-heading">{{contact.lastMsg}}</p>
+	</li>
+</ul>
+<p style = "color:white;">{{content.conversation}}</p>
