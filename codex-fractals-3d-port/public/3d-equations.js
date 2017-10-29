@@ -4,6 +4,31 @@ var u=.2,
 
 if(!maps)var maps = {};
 $.extend(maps, {
+  secure_cube: function(pt){
+    return [
+      Math.sin(pt[0]*100+pt[1])+1,
+      Math.cos(pt[1]*100+pt[2]+1),
+      Math.cos(pt[2]*100+pt[0])-1
+    ];
+  },
+  testermode: function(pt){
+    return [
+      10*Math.sin(pt[0]*100*pt[1]-1),
+      Math.cos(pt[1]*100+pt[2]+1),
+      Math.cos(pt[2]*100/pt[0])
+    ];
+  },
+  maperino: function(point){
+    var x = point[0],
+        y = point[1],
+        z = point[2],
+        t = Math.atan2(y,x);
+    return [
+      Math.sin(t-z*x),
+      Math.sin(t+z*y),
+      Math.sin(t+z)
+    ];
+  },
   cplxQuad: function(point){
     return [
       Math.pow(point[0],2)-Math.pow(point[1],2)+point[2],
@@ -16,11 +41,12 @@ $.extend(maps, {
         y = pt[1],
         z = pt[2]
         a = 1.1,
-        b = z;
+        b = z,
+        c = 1;
     return [
-      y*x+Math.exp(Math.sin(y-b))+Math.exp(Math.sin(b-y)),
+      y*x+Math.exp(c*Math.sin(y-b))+Math.exp(c*Math.sin(b-y)),
       a*Math.sin(x),
-      z
+      a*Math.cos(x)
     ];
   },
   reciprocalDifference: function(point){
@@ -403,6 +429,14 @@ $.extend(maps, {
       1+U*(point[0]*Math.cos(t)-point[1]*Math.sin(t)),
       U*(point[2]*Math.sin(t)+point[1]*Math.cos(t)),
       1-U*(point[1]*Math.sin(t)- point[2]*Math.cos(t))
+    ];
+  },
+  ikedaMcvickerN: function(point) {
+    var t = .4 - 6 / (1 + Math.pow(point[0],2) + Math.pow(point[1],2) + Math.pow(point[2],2));
+    return [
+      1+U*(point[0]*Math.cos(t)-point[1]*Math.sin(t)),
+      U*(point[2]*Math.sin(t)+point[1]*Math.cos(t)),
+      U*(point[0]*Math.sin(t)-point[2]*Math.cos(t))-1
     ];
   },
   ikedaMcvicker2: function(point) {

@@ -133,20 +133,61 @@ void Renderer::drawPoint(Eigen::Vector2f vec, int size){
 }
 
 Eigen::Vector2f Renderer::drawPoint(Eigen::Vector3f vec){
-	int w;
-	int h;
-	SDL_GetRendererOutputSize(ren, &w, &h);
-	Eigen::Vector3f viewport3;
-	if(viewport3.size()<viewport.size()){
-		viewport3 = viewport.block(0, 0, 3, 1);
-	} else {
-		viewport3.setConstant(0);
-		viewport3.block(0, 0, viewport.size(), 1);
-	}
-	Eigen::Vector2f tmp = cast(vec,viewport);
-	tmp*=w>h?h:w;
-	drawPoint(tmp,ceilf(100.0f/(vec-viewport).norm()));
-	return tmp;
+    int w;
+    int h;
+    SDL_GetRendererOutputSize(ren, &w, &h);
+    Eigen::Vector3f viewport3;
+    if(viewport3.size()<viewport.size()){
+        viewport3 = viewport.block(0, 0, 3, 1);
+    } else {
+        viewport3.setConstant(0);
+        viewport3.block(0, 0, viewport.size(), 1);
+    }
+    Eigen::Vector2f tmp = cast(vec,viewport);
+    tmp*=w>h?h:w;
+    drawPoint(tmp,ceilf(100.0f/(vec-viewport).norm()));
+    return tmp;
+}
+
+Eigen::Vector2f Renderer::drawPoint(Eigen::Vector3f vec, int size){
+    int w;
+    int h;
+    SDL_GetRendererOutputSize(ren, &w, &h);
+    Eigen::Vector3f viewport3;
+    if(viewport3.size()<viewport.size()){
+        viewport3 = viewport.block(0, 0, 3, 1);
+    } else {
+        viewport3.setConstant(0);
+        viewport3.block(0, 0, viewport.size(), 1);
+    }
+    Eigen::Vector2f tmp = cast(vec,viewport);
+    tmp*=w>h?h:w;
+    drawPoint(tmp,size);
+    return tmp;
+}
+
+Eigen::Vector2f Renderer::drawPoint(Eigen::VectorXf vec, int size){
+    if(vec.size()==2){
+        drawPoint((Eigen::Vector2f)vec, size);
+        return vec;
+    }
+    if(vec.size()==3){
+        return drawPoint((Eigen::Vector3f)vec, size);
+    }
+    int w;
+    int h;
+    SDL_GetRendererOutputSize(ren, &w, &h);
+    Eigen::VectorXf superviewport(vec.size());
+    if(superviewport.size()<viewport.size()){
+        superviewport = viewport.block(0, 0, vec.size(), 1);
+    } else {
+        superviewport.setConstant(-2);
+        superviewport.block(0, 0, 3, 1) = viewport;
+    }
+    while(vec.size()>2){vec=cast(vec, superviewport);}
+    vec*=w>h?h:w;
+    drawPoint(vec,size);
+    return vec;
 }
 
 Eigen::Vector2f Renderer::cast2d(Eigen::Vector3f vec) {

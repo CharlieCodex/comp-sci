@@ -25,7 +25,7 @@ function draw() {
 
 	//console.log(depth);
 	if(!settings.keep){
-		ctx.fillStyle = 'rgba(255,255,255,1)';
+		ctx.fillStyle = 'rgba(255,255,255,0.125)';
 		if(settings.color=='inverted'){
 			ctx.fillStyle = 'rgba(0,0,0,1)';
 		}
@@ -217,10 +217,10 @@ function draw() {
 	    ctx.fillStyle = 'rgba(0,0,0,0.5)';
 	    break;
 	  case 'clgrad':
-	    ctx.fillStyle = 'hsla('+depth+', 100%, 50%, '+depth/1000+')';
+	    ctx.fillStyle = 'hsla('+depth*10+', 100%, 50%, '+depth/1000+')';
 	    break;
 	  case 'clbin':
-	    ctx.fillStyle = 'hsla('+depth+', 100%, 50%, 1)';
+	    ctx.fillStyle = 'hsla('+depth*10+', 100%, 50%, 1)';
 	    break;
 	  case 'inverted':
 	    ctx.fillStyle = 'rgba(255,255,255,'+depth/10000+')';

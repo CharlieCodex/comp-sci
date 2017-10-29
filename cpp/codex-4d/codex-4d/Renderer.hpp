@@ -49,8 +49,10 @@ public:
 	void drawPoint(Eigen::Vector2f vec);
 	void drawLine(Eigen::Vector2f a, Eigen::Vector2f b);
 	void drawPoint(float x, float y, int size);
-	void drawPoint(Eigen::Vector2f vec, int size);
+    void drawPoint(Eigen::Vector2f vec, int size);
 	Eigen::Vector2f drawPoint(Eigen::Vector3f vec);
+    Eigen::Vector2f drawPoint(Eigen::Vector3f vec, int size);
+    Eigen::Vector2f drawPoint(Eigen::VectorXf vec, int size);
 	Eigen::Vector2f cast2d(Eigen::Vector3f vec);
 	void drawWireframe(Wireframe &w);
 	void drawWireframe(Wireframe &w, bool points);
