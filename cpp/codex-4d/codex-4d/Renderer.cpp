@@ -184,7 +184,7 @@ Eigen::Vector2f Renderer::drawPoint(Eigen::VectorXf vec, int size){
         superviewport.setConstant(-2);
         superviewport.block(0, 0, 3, 1) = viewport;
     }
-    while(vec.size()>2){vec=cast(vec, superviewport);}
+    while(vec.size()>2){vec=cast(vec, superviewport.block(0,0,vec.size(),1));}
     vec*=w>h?h:w;
     drawPoint(vec,size);
     return vec;
