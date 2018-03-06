@@ -4,12 +4,14 @@ import pygame
 import sys
 
 
-def compute(x_np, y_np):
+def compute(x_np, y_np, func=0):
+    if func == 0:
+        func = cl_prog.ikeda_mod
     x_g = cl.Buffer(cl_ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=x_np)
     y_g = cl.Buffer(cl_ctx, mf.READ_ONLY | mf.COPY_HOST_PTR, hostbuf=y_np)
     res_x = cl.Buffer(cl_ctx, mf.WRITE_ONLY, y_np.nbytes)
     res_y = cl.Buffer(cl_ctx, mf.WRITE_ONLY, y_np.nbytes)
-    cl_prog.henon(queue, x_np.shape, None, x_g, y_g, res_x, res_y)
+    func(queue, x_np.shape, None, x_g, y_g, res_x, res_y)
 
     res_x_np = np.empty_like(y_np)
     res_y_np = np.empty_like(y_np)
@@ -63,6 +65,16 @@ def init_cl():
       res_x[gid] = 1 + .125 * x_g[gid] * x_g[gid] + y_g[gid];
       res_y[gid] = - x_g[gid];
     }
+    __kernel void henon_mod(
+        __global const float *x_g,
+        __global const float *y_g,
+        __global float *res_x,
+        __global float *res_y)
+    {
+      int gid = get_global_id(0);
+      res_x[gid] = fmod((1 + .125 * x_g[gid] * x_g[gid] + y_g[gid]), 10);
+      res_y[gid] = fmod((- x_g[gid]), 10);
+    }
     __kernel void ikeda(
         __global const float *x_g,
         __global const float *y_g,
@@ -70,10 +82,33 @@ def init_cl():
         __global float *res_y)
     {
       int gid = get_global_id(0);
-      float u = 1;
+      float u = 1.0;
       float t = 0.4 - 6 / (1 + x_g[gid] * x_g[gid] + y_g[gid] * y_g[gid]);
       res_x[gid] = 1 + u * (x_g[gid] * cos(t) - y_g[gid] * sin(t));
       res_y[gid] = u * (y_g[gid] * cos(t) + x_g[gid] * sin(t));
+    }
+    __kernel void ikeda_mod(
+        __global const float *x_g,
+        __global const float *y_g,
+        __global float *res_x,
+        __global float *res_y)
+    {
+      int gid = get_global_id(0);
+      float u = 1.0;
+      float t = 0.4 - 6 / (1 + x_g[gid] * x_g[gid] + y_g[gid] * y_g[gid]);
+      res_x[gid] = fmod(1 + u * (x_g[gid] * cos(t) - y_g[gid] * sin(t)),10);
+      res_y[gid] = fmod(u * (y_g[gid] * cos(t) + x_g[gid] * sin(t)),10);
+    }
+    __kernel void cplx_logistics(
+        __global const float *x_g,
+        __global const float *y_g,
+        __global float *res_x,
+        __global float *res_y)
+    {
+      int gid = get_global_id(0);
+      float r = 4.5;
+      res_x[gid] = r*(x_g[gid] - powf(x_g[gid],2) + powf(y_g[gid],2));
+      res_y[gid] = r*(y_g[gid] - 2 * x_g[gid] * y_g[gid]);
     }
     __kernel void scale_points(
         const float win_x,
@@ -134,7 +169,7 @@ def run_pygame():
                                      pygame.FULLSCREEN |
                                      pygame.OPENGL)
     screen.fill(black)
-    x, y = np.random.rand(2, 10000).astype(np.float32) * 10 - 5
+    x, y = np.random.rand(2, 100000).astype(np.float32) * 10 - 5
     running = True
     n = 0
     run_ticks = 20000
@@ -173,16 +208,18 @@ def run_pygame():
             fps.append(clock.get_fps())
 
 
-def compute_n(x_np, y_np, n):
+def compute_n(x_np, y_np, n, func=0):
+    if func == 0:
+        func = cl_prog.cplx_logistics
     x_g = cl.Buffer(cl_ctx, mf.READ_WRITE | mf.COPY_HOST_PTR, hostbuf=x_np)
     y_g = cl.Buffer(cl_ctx, mf.READ_WRITE | mf.COPY_HOST_PTR, hostbuf=y_np)
     x_g_ = cl.Buffer(cl_ctx, mf.READ_WRITE, y_np.nbytes)
     y_g_ = cl.Buffer(cl_ctx, mf.READ_WRITE, y_np.nbytes)
     for i in range(n):
         if i % 2 == 0:
-            cl_prog.ikeda(queue, x_np.shape, None, x_g, y_g, x_g_, y_g_)
+            func(queue, x_np.shape, None, x_g, y_g, x_g_, y_g_)
         if i % 2 != 0:
-            cl_prog.ikeda(queue, x_np.shape, None, x_g_, y_g_, x_g, y_g)
+            func(queue, x_np.shape, None, x_g_, y_g_, x_g, y_g)
     if n % 2 == 0:
         ox, oy = x_g, y_g
     if n % 2 != 0:

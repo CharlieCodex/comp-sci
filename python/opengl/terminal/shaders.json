@@ -1,0 +1,4 @@
+{
+	"vertex_shaders": ["vertex.glsl"],
+	"fragment_shaders": ["fragment.glsl"]
+}

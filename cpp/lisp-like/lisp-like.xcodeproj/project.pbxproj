@@ -8,6 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		C676C952201B5FEF00CCD399 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C676C951201B5FEF00CCD399 /* main.cpp */; };
+		C676C95A201B608D00CCD399 /* FuncCall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C676C958201B608D00CCD399 /* FuncCall.cpp */; };
+		C676C95E201B636200CCD399 /* Expression.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C676C95C201B636200CCD399 /* Expression.cpp */; };
+		C676C962201B651D00CCD399 /* Value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C676C960201B651D00CCD399 /* Value.cpp */; };
+		C676C969201B6D0600CCD399 /* Environment.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C676C967201B6D0600CCD399 /* Environment.cpp */; };
+		C676C972201BE55900CCD399 /* Func.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C676C970201BE55900CCD399 /* Func.cpp */; };
+		C676C975201BEC4D00CCD399 /* Quote.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C676C973201BEC4D00CCD399 /* Quote.cpp */; };
+		C676C97D201D0E8200CCD399 /* Parser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C676C97B201D0E8200CCD399 /* Parser.cpp */; };
+		C68CCFC72020BA3D0060D941 /* Symbol.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C68CCFC62020BA3D0060D941 /* Symbol.cpp */; };
+		C68CCFCA2020D0080060D941 /* Dec64.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C68CCFC82020D0080060D941 /* Dec64.cpp */; };
+		C68CCFCE2020DB550060D941 /* CFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C68CCFCC2020DB550060D941 /* CFunc.cpp */; };
+		C68CCFD22021410B0060D941 /* Arithmetic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C68CCFD02021410B0060D941 /* Arithmetic.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +36,30 @@
 /* Begin PBXFileReference section */
 		C676C94E201B5FEF00CCD399 /* lisp-like */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "lisp-like"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C676C951201B5FEF00CCD399 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		C676C958201B608D00CCD399 /* FuncCall.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FuncCall.cpp; sourceTree = "<group>"; };
+		C676C959201B608D00CCD399 /* FuncCall.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = FuncCall.hpp; sourceTree = "<group>"; };
+		C676C95C201B636200CCD399 /* Expression.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Expression.cpp; sourceTree = "<group>"; };
+		C676C95D201B636200CCD399 /* Expression.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Expression.hpp; sourceTree = "<group>"; };
+		C676C960201B651D00CCD399 /* Value.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Value.cpp; sourceTree = "<group>"; };
+		C676C961201B651D00CCD399 /* Value.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Value.hpp; sourceTree = "<group>"; };
+		C676C967201B6D0600CCD399 /* Environment.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Environment.cpp; sourceTree = "<group>"; };
+		C676C968201B6D0600CCD399 /* Environment.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Environment.hpp; sourceTree = "<group>"; };
+		C676C96B201B6ED100CCD399 /* Symbol.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Symbol.hpp; sourceTree = "<group>"; };
+		C676C96E201BDFE800CCD399 /* ValueExpression.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ValueExpression.hpp; sourceTree = "<group>"; };
+		C676C970201BE55900CCD399 /* Func.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Func.cpp; sourceTree = "<group>"; };
+		C676C971201BE55900CCD399 /* Func.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Func.hpp; sourceTree = "<group>"; };
+		C676C973201BEC4D00CCD399 /* Quote.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Quote.cpp; sourceTree = "<group>"; };
+		C676C974201BEC4D00CCD399 /* Quote.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Quote.hpp; sourceTree = "<group>"; };
+		C676C978201D0D4400CCD399 /* SymbolExpression.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SymbolExpression.hpp; sourceTree = "<group>"; };
+		C676C97B201D0E8200CCD399 /* Parser.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Parser.cpp; sourceTree = "<group>"; };
+		C676C97C201D0E8200CCD399 /* Parser.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Parser.hpp; sourceTree = "<group>"; };
+		C68CCFC62020BA3D0060D941 /* Symbol.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Symbol.cpp; sourceTree = "<group>"; };
+		C68CCFC82020D0080060D941 /* Dec64.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Dec64.cpp; sourceTree = "<group>"; };
+		C68CCFC92020D0080060D941 /* Dec64.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Dec64.hpp; sourceTree = "<group>"; };
+		C68CCFCC2020DB550060D941 /* CFunc.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = CFunc.cpp; sourceTree = "<group>"; };
+		C68CCFCD2020DB550060D941 /* CFunc.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = CFunc.hpp; sourceTree = "<group>"; };
+		C68CCFD02021410B0060D941 /* Arithmetic.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Arithmetic.cpp; sourceTree = "<group>"; };
+		C68CCFD12021410B0060D941 /* Arithmetic.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Arithmetic.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +92,73 @@
 		C676C950201B5FEF00CCD399 /* lisp-like */ = {
 			isa = PBXGroup;
 			children = (
+				C68CCFCB2020DB380060D941 /* Builtins */,
+				C676C97A201D0E6D00CCD399 /* Parser */,
+				C676C966201B6CEC00CCD399 /* Environment */,
+				C676C95F201B650D00CCD399 /* Primatives */,
+				C676C95B201B60CE00CCD399 /* Expressions */,
 				C676C951201B5FEF00CCD399 /* main.cpp */,
 			);
 			path = "lisp-like";
+			sourceTree = "<group>";
+		};
+		C676C95B201B60CE00CCD399 /* Expressions */ = {
+			isa = PBXGroup;
+			children = (
+				C676C958201B608D00CCD399 /* FuncCall.cpp */,
+				C676C959201B608D00CCD399 /* FuncCall.hpp */,
+				C676C95C201B636200CCD399 /* Expression.cpp */,
+				C676C95D201B636200CCD399 /* Expression.hpp */,
+				C676C96E201BDFE800CCD399 /* ValueExpression.hpp */,
+				C676C978201D0D4400CCD399 /* SymbolExpression.hpp */,
+			);
+			path = Expressions;
+			sourceTree = "<group>";
+		};
+		C676C95F201B650D00CCD399 /* Primatives */ = {
+			isa = PBXGroup;
+			children = (
+				C676C960201B651D00CCD399 /* Value.cpp */,
+				C676C961201B651D00CCD399 /* Value.hpp */,
+				C676C970201BE55900CCD399 /* Func.cpp */,
+				C676C971201BE55900CCD399 /* Func.hpp */,
+				C676C973201BEC4D00CCD399 /* Quote.cpp */,
+				C676C974201BEC4D00CCD399 /* Quote.hpp */,
+				C68CCFC82020D0080060D941 /* Dec64.cpp */,
+				C68CCFC92020D0080060D941 /* Dec64.hpp */,
+			);
+			path = Primatives;
+			sourceTree = "<group>";
+		};
+		C676C966201B6CEC00CCD399 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				C676C967201B6D0600CCD399 /* Environment.cpp */,
+				C676C968201B6D0600CCD399 /* Environment.hpp */,
+				C68CCFC62020BA3D0060D941 /* Symbol.cpp */,
+				C676C96B201B6ED100CCD399 /* Symbol.hpp */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		C676C97A201D0E6D00CCD399 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				C676C97B201D0E8200CCD399 /* Parser.cpp */,
+				C676C97C201D0E8200CCD399 /* Parser.hpp */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		C68CCFCB2020DB380060D941 /* Builtins */ = {
+			isa = PBXGroup;
+			children = (
+				C68CCFCC2020DB550060D941 /* CFunc.cpp */,
+				C68CCFCD2020DB550060D941 /* CFunc.hpp */,
+				C68CCFD02021410B0060D941 /* Arithmetic.cpp */,
+				C68CCFD12021410B0060D941 /* Arithmetic.hpp */,
+			);
+			path = Builtins;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,7 +218,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C68CCFCE2020DB550060D941 /* CFunc.cpp in Sources */,
+				C676C975201BEC4D00CCD399 /* Quote.cpp in Sources */,
 				C676C952201B5FEF00CCD399 /* main.cpp in Sources */,
+				C676C95E201B636200CCD399 /* Expression.cpp in Sources */,
+				C676C969201B6D0600CCD399 /* Environment.cpp in Sources */,
+				C676C97D201D0E8200CCD399 /* Parser.cpp in Sources */,
+				C68CCFC72020BA3D0060D941 /* Symbol.cpp in Sources */,
+				C676C95A201B608D00CCD399 /* FuncCall.cpp in Sources */,
+				C676C962201B651D00CCD399 /* Value.cpp in Sources */,
+				C68CCFD22021410B0060D941 /* Arithmetic.cpp in Sources */,
+				C68CCFCA2020D0080060D941 /* Dec64.cpp in Sources */,
+				C676C972201BE55900CCD399 /* Func.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
