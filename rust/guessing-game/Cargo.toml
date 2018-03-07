@@ -1,0 +1,9 @@
+[package]
+
+name = "guessing-game"
+version = "0.1.0"
+authors = ["charliecodex <19782355+CharlieCodex@users.noreply.github.com>"]
+
+[dependencies]
+
+rand = "0.3.14"

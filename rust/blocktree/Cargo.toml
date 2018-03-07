@@ -1,0 +1,8 @@
+[package]
+name = "blocktree"
+version = "0.1.0"
+authors = ["charliecodex <19782355+CharlieCodex@users.noreply.github.com>"]
+
+[dependencies]
+ring = "0.12.1"
+untrusted = "0.5.1"
