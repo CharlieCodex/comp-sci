@@ -14,10 +14,26 @@ const shapes = {
               .concat(cube([1,4,4])).concat(cube([1,4,1])).concat(cube([1,1,4])).concat(cube([1,1,1])),
   "fail-1": [[3,3,3],[3,3,2],[3,2,3],[3,2,2],
            [2,3,3],[2,3,2],[2,2,3],[2,2,2],[4,4,4],[1,1,1]],
-  "test": [[3,3,3],[3,3,2],[3,2,3],[3,2,2],[4,4,1],[1,1,4],
-           [2,3,3],[2,3,2],[2,2,3],[2,2,2],[4,4,4],[1,1,1]]
+  "stable-2": [[3,3,3],[3,3,2],[3,2,3],[3,2,2],[4,4,1],[1,1,4],
+           [2,3,3],[2,3,2],[2,2,3],[2,2,2],[4,4,4],[1,1,1]],
+  "long-1": [[3,3,3],[3,3,2],[3,2,3],[3,2,2],[4,4,1],[1,1,4],
+    [2,3,3],[2,3,2],[2,2,3],[2,2,2],[4,4,4],[1,1,1]].concat(cube([-1,-1,-1]))
+    .concat(cube([-3,-3,-3]))
+    .concat(cube([-6,-3,-3]))
+    .concat(cube([-6,-6,-3])),
+    "long-2": [[3,3,3],[3,3,2],[3,2,3],[3,2,2],[4,4,1],[1,1,4],
+      [2,3,3],[2,3,2],[2,2,3],[2,2,2],[4,4,4],[1,1,1]].concat(cube([-1,-1,-1]))
+      .concat(cube([-3,-3,-3]))
+      .concat(cube([-6,-3,-3]))
+      .concat(cube([-6,-6,-3]))
+      .concat(cube([-3,-6,-3]))
+      .concat(cube([-6,0,-3])),
+    "long-3": [[0,0,0],[0,0,2],[0,2,0],[0,2,2],
+      [2,0,0],[2,0,2],[2,2,0],[2,2,2],
+      [3,3,3],[1,1,1,],[1,2,1],[2,2,1],
+      [4,3,3],[4,1,1,],[1,4,1],[2,4,1]]
 },
-  obj = add_vec_to_list(shapes["explosion"],[size/2,size/2,size/2]);
+  obj = add_vec_to_list(shapes["long-3"],[size/2,size/2,size/2]);
 function zeros(dimensions) {
     var array = [];
 
@@ -55,11 +71,11 @@ $(function(){
     let cb = new THREE.Mesh(geometry, mat());
     cb.position.set(x-size/2,y-size/2,z-size/2);
     cubes.add( cb );
-    for (let i = -1; i <= 1; i++){
+    for (let i = -2; i <= 2; i++){
 
-      for (let j = -1; j <= 1; j++){
+      for (let j = -2; j <= 2; j++){
         
-        for (let k = -1; k <= 1; k++){
+        for (let k = -2; k <= 2; k++){
 
           watchmap[[x+i,y+j,z+k]] = true;
           watchlist.push([x+i,y+j,z+k]);
@@ -75,11 +91,11 @@ $(function(){
   
   const watch_all_neighbors = ([x,y,z], arr, wm) => {
     
-    for (let i = -1; i <= 1; i++){
+    for (let i = -2; i <= 2; i++){
 
-      for (let j = -1; j <= 1; j++){
+      for (let j = -2; j <= 2; j++){
         
-        for (let k = -1; k <= 1; k++){
+        for (let k = -2; k <= 2; k++){
 
           wm[[x+i,y+j,z+k]] = true;
           arr.push([x+i,y+j,z+k]);
@@ -112,26 +128,26 @@ $(function(){
         var self = safe_lookup(cells, i, j, k)?1:0,
             sum = -self; //account for counting the cell itself
 
-        for (var x = -1; x < 2; x++){
-          for (var y = -1; y < 2; y++){
-            for (var z = -1; z < 2; z++){
+        for (var x = -2; x <= 2; x++){
+          for (var y = -2; y <= 2; y++){
+            for (var z = -2; z <= 2; z++){
               sum += (safe_lookup(cells, i+x, j+y, k+z)?1:0);
             }
           } 
         }
 
         if(self){
-          if(sum < 4){
+          if(sum < 7){
             console.log('lonely: ',pos,sum)
             changes.push([i,j,k,0]);
             watch_all_neighbors(pos,new_watchlist,new_wm);
           }
-          if(sum > 7){
+          if(sum > 12){
             changes.push([i,j,k,0]);
             watch_all_neighbors(pos,new_watchlist,new_wm);
           }
         }
-        else if((sum==5)){
+        else if((sum==12)){
           changes.push([i,j,k,1]);
           watch_all_neighbors(pos,new_watchlist,new_wm);
         }
